@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input id="odam" value="123" type="text" />
+    <button id="push">push</button>
+
+    <script>
+      //   var odam = document.getElementById("odam").value;
+      //   console.log(odam);
+      //   var push = document.getElementById("push");
+
+      //   var computer = Math.floor(Math.random() * 50);
+      //   var hakam = Math.floor(Math.random() * 50);
+
+      //   push.addEventListener("click", function () {
+      //     console.log(`hakam ${hakam}`);
+      //     console.log(`odam ${odam}`);
+      //     if (hakam - computer < hakam - odam) {
+      //       console.log(
+      //         `hakamning qiymati ${hakam} va computer ${computer} yutdi`
+      //       );
+      //     } else if (hakam - computer > hakam - odam) {
+      //       console.log(`hakamning qiymati ${hakam} va odam ${odam} yutdi`);
+      //     } else {
+      //       console.log("durang");
+      //     }
+      //   });
+      let man = +document.getElementById("odam").value;
+      let push = document.getElementById("push");
+
+      push.addEventListener("click", function () {
+        let computer = Math.floor(Math.random() * 50);
+        let hakam = Math.floor(Math.random() * 50);
+
+        if (hakam < man && hakam < computer) {
+          console.log(
+            `ikkalangiz ham yutqazdingiz. hakam${hakam} computer${computer}`
+          );
+        } else if (hakam < man && hakam > computer) {
+          console.log(
+            `siz yutqazdingiz. Computer ${computer}ga teng, hakam esa ${hakam}`
+          );
+        } else if (hakam > man && hakam < computer) {
+          console.log(
+            `computer yutqazdi. Computer ${computer}ga teng, hakam esa ${hakam}`
+          );
+        } else if (hakam - computer < hakam - man) {
+          console.log(`hakam ${hakam} va computer ${computer}yutdi`);
+        } else if (hakam - computer > hakam - odam) {
+          console.log(`hakamning qiymati ${hakam} va odam ${odam} yutdi`);
+        } else if (hakam - computer == hakam) {
+          console.log("durang");
+        }
+      });
+    </script>
+  </body>
+</html>
